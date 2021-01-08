@@ -1,0 +1,16 @@
+version: '3.3'
+
+services:
+  web:
+    build: .
+    image: platform_client:latest 
+    ports:
+      - "8080:8080"
+    environment:
+      - BACKEND_URL=http://localhost
+    networks:
+      - platform_default
+
+# same as platform 
+networks:
+  platform_default:
